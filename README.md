@@ -58,4 +58,8 @@ See `docs/github-backup.md` for checks, limits and the initial restore receipt. 
 
 ## Persistent memory and collective intelligence direction
 
-See [persistent neural-RAG MCP design](docs/persistent-neural-rag-mcp.md). The intended product supports personal memory, libraries, explicit opt-in session-summary contributions, private quarantine, cleaning, revision-bound approval, and vetted releases every 2–3 days. First prove this locally with synthetic users and data. This product layer and edge distribution are proposed; the current repository provides the local engine and backup workflow. Future private user memories and quarantine records must not enter Git backups.
+See [persistent neural-RAG MCP design](docs/persistent-neural-rag-mcp.md). The intended product supports personal memory, libraries, explicit opt-in session-summary contributions, private quarantine, cleaning, revision-bound approval, and vetted releases every 2–3 days. First prove rapid memory sharing during a real local agentic build sprint; see [sprint proof design](docs/local-agentic-sprint-proof.md). This product layer and edge distribution are proposed; the current repository provides the local engine and backup workflow. Future private user memories and quarantine records must not enter Git backups.
+
+## First proof: local agentic build sprint
+
+All participating agents share one local memory/library store. Ingest their memories, summaries, failed attempts and verified fixes at checkpoints; expose memory and document queries during work. Make committed records visible rapidly, including cache invalidation. Compare matched sprint outcomes against document lookup without shared memory. Report repeated errors, failed attempts, accepted tasks, and net time/token costs; magnitude-level improvements remain a hypothesis. No live agent hooks or shared-memory sprint are implemented by these design updates.

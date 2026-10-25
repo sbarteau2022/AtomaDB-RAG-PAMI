@@ -1,7 +1,7 @@
 ---
 title: "Persistent personal and collective RAG through MCP"
 document_type: "architecture"
-version: "1.0.0"
+version: "1.1.0"
 date: "2026-10-25T18:00:00Z"
 implementation_date: null
 author: "Codex, recording Stewart Barteau's product requirements"
@@ -81,24 +81,17 @@ GitHub holds engine source, schemas, test fixtures and explicitly vetted distrib
 
 # Local Proof and Testing Evidence
 
-No new product behavior is implemented by this design document. Required first local vertical slice:
+**Updated by the user's clarification:** the FIRST proof is the real local agentic build sprint described in `local-agentic-sprint-proof.md`. Participating agents share one local memory/library store, ingest memories and summaries rapidly, and query it during work. Measure matched task completion, repeated errors, failed attempts and net time/token cost. No local sprint outcome is established yet.
 
-1. Two synthetic users, one curator and a local MCP client; persist and restart personal memory and library retrieval.
-2. User A contributes an opted-in session summary. User B cannot retrieve its raw, cleaned or unapproved form.
-3. Cleaner flags seeded secrets, personal identifiers and malicious retrieved instructions. Pattern checks alone cannot certify arbitrary text as safe; uncertain records remain quarantined for review.
-4. Contributor approves the cleaned version; curator approves independently. A simulated 72-hour release publishes the eligible item, and B retrieves it with publishable provenance.
-5. Change one byte after approval: publication must fail until approvals are renewed. Reject a forged tenant/role, duplicate replay, expired consent, poisoned contribution and cross-user query.
-6. Revoke the contribution: origin stops serving it immediately and connected simulated edges stop within the declared lease. A stale edge cannot continue serving it indefinitely.
-7. Restart publisher during release and recover without partial versions or duplicate records. Restore backup artifacts and repeat retrieval checks.
-8. Measure persistence, cross-tenant isolation, cleaning false negatives/positives, relevance, conflicting evidence, latency and storage growth. Passing synthetic tests alone does not prove real-user privacy, collective intelligence improvement or production readiness.
+The earlier synthetic two-user quarantine/approval/release scenario is deferred to the later multiuser cloud product validation. The local sprint does not wait for a two-to-three-day batch or implement the cloud publisher first.
 
 # Deployment / Rollout
 
-Local-only proof first. Continue using the inspected embedding identity and retrieval baseline. Use synthetic memory data until approval and isolation gates pass. Later map private quarantine/artifacts to private R2, lifecycle metadata to D1, existing Rust retrieval to Containers and verified releases to edge caches. No automatic contributor collection or shared edge publication is currently enabled.
+Real local sprint first, using the participating agents’ authorized memories and summaries. Continue using the inspected embedding identity and retrieval baseline. Keep sprint memory local. Later map private quarantine/artifacts to private R2, lifecycle metadata to D1, existing Rust retrieval to Containers and verified releases to edge caches. No automatic contributor collection or shared edge publication is currently enabled.
 
 # Next Stage of Implementation
 
-Build the local consent/state machine and MCP adapter as one measurable vertical slice. Implement scope isolation before ingestion, revision-bound approval before publishing, and revocation before distributed caching. Defer autonomous cleaning approval, neural training and broad edge replication until the corresponding gates have evidence.
+First build and measure the shared local sprint memory loop in `local-agentic-sprint-proof.md`. Later build the consent/state machine and multiuser MCP product. Implement scope isolation before ingestion, revision-bound approval before publishing, and revocation before distributed caching. Defer autonomous cleaning approval, neural training and broad edge replication until the corresponding gates have evidence.
 
 # What We Learned
 
@@ -116,3 +109,5 @@ Product requirements come directly from Stewart Barteau's 2026-10-25 clarificati
 | Version | Date | Author | Change |
 |---|---|---|---|
 | 1.0.0 | 2026-10-25 | Codex | Capture user-defined persistent/collective memory product and local proof gates |
+
+| 1.1.0 | 2026-10-25 | Codex | First proof corrected to real local agentic build sprint; synthetic cloud workflow deferred |
