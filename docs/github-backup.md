@@ -69,7 +69,7 @@ Python standard library implements portable backup and restore, while Rust remai
 
 # Testing Evidence
 
-Executed: 11/11 backup edge-case tests; engine smoke 13/13; PAMI smoke 3/3. Cargo test passed but contains zero unit tests; the smoke commands supply engine behavioral checks. The real library snapshot validated thirteen segments and all vector records. Local full-snapshot restore succeeded: 29 files, 1,482,333,198 bytes, seven collections and thirteen segments. Remote LFS upload and clean-clone restore are pending; do not label the remote backup verified yet. Engine smoke and PAMI checks use a synthetic built-in test embedder and do not qualify real-model retrieval quality or the user's future concept.
+Executed: 11/11 backup edge-case tests; engine smoke 13/13; PAMI smoke 3/3. Cargo test passed but contains zero unit tests; the smoke commands supply engine behavioral checks. The real library snapshot validated thirteen segments and all vector records. Two lexical query comparisons (engineering and papers) returned identical original/restored hits and assembled text. This does not qualify dense retrieval quality. Local full-snapshot restore succeeded: 29 files, 1,482,333,198 bytes, seven collections and thirteen segments. Remote LFS upload and clean-clone restore are pending; do not label the remote backup verified yet. Engine smoke and PAMI checks use a synthetic built-in test embedder and do not qualify real-model retrieval quality or the user's future concept.
 
 ## Was It Proven Necessary?
 

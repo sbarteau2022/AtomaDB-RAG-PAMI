@@ -1,5 +1,7 @@
 # AtomaDB — local proof of concept and GitHub backup
 
+The `codex/local-poc` branch contains source and test fixtures. Full database snapshots belong to `main`; the initial LFS transfer must finish before remote recovery is verified.
+
 The local Rust engine remains the active database. This private repository holds the engine, design, and canonical versioned backup history. Database files use Git LFS; Git commits hold content-addressed snapshot receipts. A backup is complete only after the Git commit and all referenced LFS objects have uploaded and a clean-clone restore succeeds.
 
 ## Design and boundaries
@@ -53,3 +55,7 @@ Source: https://docs.github.com/en/billing/concepts/product-billing/git-lfs
 ## Validation status
 
 See `docs/github-backup.md` for checks, limits and the initial restore receipt. No cloud runtime or automatic scheduling is enabled. Snapshots and pushes are explicit commands.
+
+## Persistent memory and collective intelligence direction
+
+See [persistent neural-RAG MCP design](docs/persistent-neural-rag-mcp.md). The intended product supports personal memory, libraries, explicit opt-in session-summary contributions, private quarantine, cleaning, revision-bound approval, and vetted releases every 2–3 days. First prove this locally with synthetic users and data. This product layer and edge distribution are proposed; the current repository provides the local engine and backup workflow. Future private user memories and quarantine records must not enter Git backups.
